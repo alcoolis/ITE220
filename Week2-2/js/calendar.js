@@ -1,6 +1,21 @@
 // display the calendar here
+// initialize the variables
 var hotelTable = document.getElementById("hotelCalendarTable");
-var defaultData = hotelTable.innerHTML;
-var stringHTML = "";
-stringHTML = "<tr><td>1</td><td>2</td></tr>";
-hotelTable.innerHTML += stringHTML;
+var stringHTML = hotelTable.innerHTML; //get the html existent data with .innerHTML function
+var date = 1;
+
+//complete the calendar with two nested loops and date variable
+for (i = 0; i < 5; i++)
+{
+	stringHTML += "<tr>";
+	for (j = 0; j < 7; j++)
+	{
+		stringHTML += "<td>" + (date++) + "</td>";
+		if (date > 31)
+			break;
+	}
+	stringHTML += "</tr>";
+}
+
+//return the calendar to the html page
+hotelTable.innerHTML = stringHTML;
