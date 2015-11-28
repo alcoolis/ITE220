@@ -3,7 +3,7 @@
  */
 //initialize variables and put the nameString and the discount into variables in order to change them easily
 //*UPDATE* The nameString is taken from add-name.js script file
-//var nameString = prompt("What is your name?"); 
+//var nameString = "Miltos"; 
 var discount=20;
 var greetingsString;
 var price=[10, 5, 1];
