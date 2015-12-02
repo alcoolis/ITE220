@@ -2,13 +2,13 @@ var game =
 {
 	answer :Math.ceil(Math.random()*99), // random this value from 1-99 // (1-99) for lessing only to digits and exclude 0
 	
-	tries : 6,
+	tries : 7,
 
 	
 	init : function()
 	{
 		console.log("Random Number = "+this.answer);//for debugging purposes
-		alert("You have 6 tries to find the correcte number!");
+		alert("You have 6 tries to find the correct number!");
 		
 		var self = this;
 		
@@ -88,7 +88,7 @@ var game =
 	{
 		this.answer = Math.ceil(Math.random()*99);
 		console.log("New Random Number = " + this.answer);//for debugging purposes
-		this.tries=6;
+		this.tries=7;
 	},
 	
 	clearScreen : function()
@@ -140,7 +140,7 @@ var game =
 			alert("Congratulations! Correct answer");
 			this.answer = Math.ceil(Math.random()*99);
 			userValueEle.value="";
-			this.tries=6;
+			this.tries=7;
 
 			console.log("New Random Number = " + this.answer);//for debugging purposes
 		}
@@ -152,7 +152,7 @@ var game =
 				{
 					alert("Sorry but you did not find the answer, the correct number was " + this.answer);
 					userValueEle.value = "";
-					this.tries=6;
+					this.tries=7;
 					this.answer = Math.ceil(Math.random()*99);
 				}
 				else if (this.tries == 1)
@@ -178,7 +178,7 @@ var game =
 				{
 					alert("Sorry but you did not find the answer, the correct number was " + this.answer);
 					userValueEle.value = "";
-					this.tries=6;
+					this.tries=7;
 					this.answer = Math.ceil(Math.random()*99);
 				}				
 				else if (this.tries == 1)
