@@ -8,7 +8,7 @@ var game =
 	init : function()
 	{
 		console.log("Random Number = "+this.answer);//for debugging purposes
-		alert("You have 6 tries to find the correct number!");
+		alert("You have 7 tries to find the correct number!");
 		
 		var self = this;
 		
