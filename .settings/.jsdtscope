@@ -8,5 +8,6 @@
 			<attribute name="hide" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipselabs.jsdt.jquery.core.CoflictLibrary_3.0"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
