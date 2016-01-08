@@ -6,20 +6,23 @@
 
 $(function()
 {
-	var http,city,key,units,url,lastTempClass;
+	var http,httpForcast,city,key,units,url,urlForcast,lastTempClass;
 
 	init();
 	
 	function init()
 	{
 		http="http://api.openweathermap.org/data/2.5/weather?q=";
+		httpForcast="http://api.openweathermap.org/data/2.5/forecast?q="
 		city="Thessaloniki";
 		key="&appid=2de143494c0b295cca9337e1e96b00e0";
 		units="&units=metric";
 		url=http+city+key+units;
+		urlForcast=httpForcast+city+key+units;
 		lastTempClass="temp2";
-		
-		getData();
+
+		getData(url, true);
+		getData(urlForcast, false);
 	}
 	
 	$('#menuTemp a').on('click', function(e)
@@ -33,6 +36,12 @@ $(function()
 			$("#weatherText p:nth-child(3) span:nth-child(2)").html("&#8490;");
 			$("#weatherText p:nth-child(3) span:nth-child(4)").html("&#8490;");
 			$("#weatherText p:nth-child(7) span:nth-child(2)").text(" meter/sec");
+			
+			for(var i=0; i<3; i++)
+			{
+				$("#cont"+(i+1)+" span:nth-child(2)").html("&#8490;");
+			}
+			
 			lastTempClass="temp1";
 			units = '';
 		}
@@ -42,6 +51,12 @@ $(function()
 			$("#weatherText p:nth-child(3) span:nth-child(2)").html("&#8451;");
 			$("#weatherText p:nth-child(3) span:nth-child(4)").html("&#8451;");
 			$("#weatherText p:nth-child(7) span:nth-child(2)").text(" meter/sec");
+			
+			for(var i=0; i<3; i++)
+			{
+				$("#cont"+(i+1)+" span:nth-child(2)").html("&#8451;");
+			}
+			
 			lastTempClass="temp2";
 			units = '&units=metric';
 		}
@@ -51,14 +66,23 @@ $(function()
 			$("#weatherText p:nth-child(3) span:nth-child(2)").html("&#8457;");
 			$("#weatherText p:nth-child(3) span:nth-child(4)").html("&#8457;");
 			$("#weatherText p:nth-child(7) span:nth-child(2)").text(" miles/hour");
+			
+			for(var i=0; i<3; i++)
+			{
+				$("#cont"+(i+1)+" span:nth-child(2)").html("&#8457;");
+			}
+			
 			lastTempClass="temp3";
 			units = '&units=imperial';
 		}
 
 		url=http+city+key+units;
+		urlForcast=httpForcast+city+key+units;
 		$(this).removeClass("temp_disable");
 		$(this).addClass("temp_active");
-		getData();
+
+		getData(url,  true);
+		getData(urlForcast, false);
 	});
 	
 	$('nav div ul li a').on('click', function(e)
@@ -70,16 +94,18 @@ $(function()
 			city+=",au";
 		
 		url=http+city+key+units;
+		urlForcast=httpForcast+city+key+units;
 		
-		getData();
+		getData(url, true);
+		getData(urlForcast, false);
 	});
 	
-	function getData()
+	function getData(link, flag)
 	{
 		$.ajax(
 		{
 			type : 'GET',
-			url : url,
+			url : link,
 			timeout : 2000,
 			data: '',
 			dataType: 'json',
@@ -94,7 +120,13 @@ $(function()
 			},
 			success : function(weatherData)
 			{
-				processData(weatherData);
+				if(flag)
+					processCurData(weatherData);
+				else
+				{
+					processForData(weatherData);
+					curFlag=true;
+				}
 			},
 			error : function(weatherData)
 			{
