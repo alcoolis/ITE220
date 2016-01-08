@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>My Weather Site</title>
+
+<link rel="stylesheet" href="css/app.css">
+
+</head>
+
+<body class="rgba-primaryB-1">
+
+	<div>
+		<nav>
+
+			<div id="menu">
+				<ul>
+					<li><a href="#">Thessaloniki</a></li>
+					<li><a href="#">Montpellier</a></li>
+					<li><a href="#">Rouen</a></li>
+					<li><a href="#">Athens</a></li>
+					<li><a href="#">Gefyroudi</a></li>
+					<li><a href="#">Brussels</a></li>
+					<li><a href="#">Bangkok</a></li>
+					<li><a href="#">Singapore</a></li>
+					<li><a href="#">Melbourne</a></li>
+					<li><a href="#">Oslo</a></li>
+				</ul>
+
+			</div>
+		</nav>
+
+		<section id="secPart" class="rgba-primaryB-0">
+
+			<div id="context" class="rgba-primaryB-3">
+
+				<div id="menuTemp">
+					<ul>
+						<li><a id="temp1" class="temp_disable default" href="#">kelvin</a></li>
+						<li><a id="temp2" class="temp_active celsius" href="#">celsius</a></li>
+						<li><a id="temp3" class="temp_disable fahrenheit" href="#">fahrenheit</a></li>
+					</ul>
+				</div>
+
+				<div id="container" class="boxShadow rgba-primaryB-5">
+				
+					<h1>Weather Conditions</h1>
+					
+					<div id="townInfo">
+					
+						<div id="weatherText">	
+							<p>Weather Description: <span></span></p>
+							<p>Temperature: <span></span><span>&#8451;</span></p>
+							<p>Min: <span></span><span>&#8451;</span>     Max: <span></span><span>&#8451;</span></p>
+							<p>Pressure: <span></span></p>
+							<p>Humidity: <span></span></p>
+							<p>Visibility: <span></span></p>
+							<p>Wind Speed: <span></span><span> meter/sec</span></p>
+							<p>Clouds: <span></span></p>
+							<p>Sunrise: <span></span>     Sunset: <span></span></p>
+						</div>
+						
+						<div><img id="weatherImage" src="" />
+						
+						</div>
+					</div>
+
+					<div id="msg"></div>
+
+				</div>
+
+				<div id="small_windows_div">
+
+					<div id="cont1" class="cont boxShadow rgba-primaryB-5"></div>
+
+					<div id="cont2" class="cont boxShadow rgba-primaryB-5"></div>
+
+					<div id="cont3" class="cont boxShadow rgba-primaryB-5"></div>
+				</div>
+
+			</div>
+
+		</section>
+
+	</div>
+
+	<script src="js/jquery.min.js"></script>
+	
+	<script src="js/app.js"></script>
+	<script src="js/app-ui.js"></script>
+
+</body>
+
+</html>

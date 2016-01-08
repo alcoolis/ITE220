@@ -1,0 +1,242 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+
+	/*border:1px solid red;*/
+	
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.rgba-primaryC-0 { color: rgba(158,163,229,1) }	/* Main Primary color */
+.rgba-primaryC-1 { color: rgba(253,253,253,1) }
+.rgba-primaryC-2 { color: rgba(255,255,255,1) }
+.rgba-primaryC-3 { color: rgba( 10, 15, 73,1) }
+.rgba-primaryC-4 { color: rgba( 33, 49,255,1) }
+.rgba-primaryB-0 { background-color: rgba(158,163,229,1) }	/* Main Primary color */
+.rgba-primaryB-1 { background-color: rgba(253,253,253,1) }
+.rgba-primaryB-2 { background-color: rgba(255,255,255,1) }
+.rgba-primaryB-3 { background-color: rgba( 10, 15, 73,1) }
+.rgba-primaryB-4 { background-color: rgba( 33, 49,255,1) }
+.rgba-primaryB-5 { background-color: rgba(200,200,200,1) }
+
+html, body {
+	height: 100%;
+}
+
+nav {
+	background-color:black;
+	color:white;
+	height:10vh;
+	overflow: hidden;
+}
+
+nav div:FIRST-CHILD{
+	float: left;
+}
+
+#menu{
+	position: absolute;
+	width:80%;
+	margin-left: 10%; /*half the width*/
+}
+
+#menu ul {
+	margin-top: 2vh;
+}
+
+#menu li {
+	list-style-type: none;
+	width: 10%;
+	text-align: center;
+	float: left;
+}
+
+#menu a {
+	text-decoration: none;
+	font-size: 1vw;
+	color: white;
+	display: block;
+	padding:1.3vh;
+	border:solid black 1px;
+	/*box-shadow: 5px 5px 5px gray;*/
+	background-color: #9EA3E5;
+}
+
+#menu a:hover {
+	background-color: #2131FF;
+	
+	border-color: #dfdfff;
+	/*box-shadow: 3px 3px 3px gray;
+	border: none;*/
+}
+
+#secPart{
+	position: absolute;
+	width: 80%;
+	height: 90vh;
+	margin-left: 10%;
+	
+	z-index: 50;
+}
+
+#context{
+	position: absolute;
+	width: 65%;
+	height:100%;
+	left: 50%;
+	margin-left: -15%;
+	z-index: 80;
+	padding:10%;
+	clear: both;
+	overflow: hidden;
+	
+}
+
+#menuTemp{
+	position: absolute;
+	top :1%;
+	left: 7%;
+	width:84%;
+	margin-left: 1%; /*half the width*/
+}
+
+#menuTemp ul {
+	margin-top: 0.1vh;
+}
+
+#menuTemp li {
+	list-style-type: none;
+	width: 33%;
+	margin-right:0.3%;
+	text-align: center;
+	float: left;
+}
+
+#menuTemp a {
+	text-decoration: none;
+	font-size: 1vw;
+	display: block;
+	padding:0.3vh;
+	border-radius: 30px;
+	/*box-shadow: 5px 5px 5px gray;*/
+}
+
+#menuTemp a:hover {
+	
+	border-color: #dfdfff;
+	/*box-shadow: 3px 3px 3px gray;
+	border: none;*/
+}
+
+.temp_active{
+	color:white;
+	background-color: #2131FF;
+	box-shadow: inset 6px 7px 8px rgba(255,250,210,0.5);
+	border: 1px solid gray;
+}
+.temp_disable{
+	background-color: rgba(200,200,200,1);
+	color: black;
+	box-shadow: inset 3px 4px 5px rgba(0,0,0,0.7);
+	border: 1px solid gray;
+}
+
+
+#container {
+	position: absolute;
+	width: 95%;
+	height: 60%;
+	left: 50%;
+	top: 5%;
+	margin-left: -47.5%; /*half the width*/
+	z-index: 90;
+	padding-top:4%;
+	clear: both;
+	overflow: hidden;
+	text-align:center;
+	
+	border: 2px ridge;
+	border-radius: 30px;
+}
+#container h1{
+	margin-top: 2.5%;
+	font-size: 2vw;
+}
+
+#townInfo{
+	/*border:1px solid red;*/
+	overflow: hidden;
+	margin:0% 6% 0% 6%;
+	
+}
+#weatherText{
+	/*border:1px solid red;*/
+	overflow: hidden;
+	width:59%;
+    float:left;
+    
+    margin-top:4%;
+	text-align: left;
+}
+#weatherText p{
+	font-size: 1.4vw;
+	color:black;
+}
+#weatherText span{
+	font-size: 1.2vw;
+	color:white;
+}
+
+#weatherImage{
+	/*border:1px solid red;*/
+	position:absolute;
+	margin-top:10%;
+	overflow: hidden;
+    display: block;
+	width:40%;
+	height:auto;
+    float:right;
+}
+
+#msg{
+	/*border:1px solid red;*/
+	overflow: hidden;
+	color:red;
+	clear:both;
+	font-size: 1vw;
+	margin: 5%;
+	
+}
+
+#small_windows_div{
+	position: absolute;
+	width: 95%;
+	height: 30%;
+	left: 2.5%;
+	top: 67%;
+	overflow: hidden;
+	z-index: 100;
+}
+
+.cont{
+	float:left;
+	width: 30%;
+	height:100%;
+	margin-right: 5%;
+	z-index: 110;
+	border: 2px ridge;
+	border-radius: 30px;
+}
+#cont3{
+	margin-right: 0;
+	
+}
+
+.boxShadow{
+	box-shadow: inset 3px 4px 5px rgba(0,0,0,0.7);
+}
