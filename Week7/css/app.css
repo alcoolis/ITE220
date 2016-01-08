@@ -259,7 +259,6 @@ nav div:FIRST-CHILD{
 #copyright{
 	width:100%;
 	height:2.5vh;
-	clear:both;
 	margin-top:87.5vh;
 	z-index: 120;
 	color:white;
