@@ -232,12 +232,14 @@ nav div:FIRST-CHILD{
 	border: 2px ridge;
 	border-radius: 30px;
 	
+	font-size: 1.2vw;
 	text-align: center;
 }
 #cont3{
 	margin-right: 0;
 	
 }
+
 .contImages{
 	overflow: hidden;
     display: block;
@@ -246,12 +248,7 @@ nav div:FIRST-CHILD{
 	margin: 0 auto;
 	height:auto;
 }
-#cont1Image{
-}
-#cont2Image{
-}
-#cont3Image{
-}
+
 .boxShadow{
 	box-shadow: inset 3px 4px 5px rgba(0,0,0,0.7);
 }
