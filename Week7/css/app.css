@@ -4,6 +4,7 @@
 	margin: 0px;
 	padding: 0px;
 	
+	/*border:1px solid red;*/
 	
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -80,6 +81,50 @@ nav div:FIRST-CHILD{
 	margin-left: 10%;
 	
 	z-index: 50;
+}
+
+
+#leftColumn{
+	float:left;
+	width:35%;
+}
+
+#searchCity{
+	position: absolute;
+	overflow: hidden;
+	left:7%;
+    width: 20%;
+    height: 25%;
+	margin-top:3%;
+    border: outset 4px;
+    border-radius: 100px;
+}
+#searchCity a{
+	position: absolute;
+	left:10%;
+    width: 80%;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    border-radius: 30px;
+	margin-top:8%;
+	color: white;
+	font-size: 1.5vw;
+	background-color: #9EA3E5;
+	padding: 2vh;
+    border: outset 2px;
+}
+#searchCity a:HOVER{
+	background-color: #2131FF;
+}
+#autoComplete{
+	position: absolute;
+	margin-top:28%;
+	margin-left:5%;
+    width: 90%;
+    height: 4vh;
+    border-radius: 30px;
+    border: outset 2px;
 }
 
 #context{

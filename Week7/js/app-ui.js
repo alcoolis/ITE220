@@ -1,7 +1,6 @@
 /**
  * 
  */
-
 function processForData(ajaxResultFor)
 {
 	var index=findTheCorrectDate(ajaxResultFor.list);
@@ -49,7 +48,7 @@ function processCurData(ajaxResultCur)
 	$("#weatherText p:nth-child(9) span:nth-child(1)").text(formatDate(ajaxResultCur.sys.sunrise, ajaxResultCur.name));
 	$("#weatherText p:nth-child(9) span:nth-child(2)").text(formatDate(ajaxResultCur.sys.sunset, ajaxResultCur.name));
 	
-	//animateWeather();
+	animateWeather();
 	
 }
 
