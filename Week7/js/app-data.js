@@ -2,70 +2,111 @@
  * 
  */
 
-$(function() {
+var availableCitys=[];
+
+$(function()
+{
 	
-	var availableCitys;
-	
-	/*
-	$.ajax(
+	$.get("data/cityList.txt", function(data)
 	{
-		type : 'GET',
-		url : 'data/city.list.json',
-		timeout : 40000,
-		data : '',
-		dataType : 'json',
+		var available = data.split(",");
 		
-		beforeSend : function()
+		for(var i=0; i<available.length;i+=2)
 		{
-			alert(1);
-		},
-		complete : function()
-		{
-			alert(2);
-		},
-		success : function(cityList)
-		{
-			alert(3);
-		},
-		error : function(weatherData)
-		{
-			alert(4);		
+			availableCitys.push({label : available[i+1],value : available[i]});
 		}
+		
+		// alert(availableCitys.length);
+		
+		$("#autoComplete").autocomplete(
+		{
+			minLength : 3
+		});
+		
+		$("#autoComplete").autocomplete(
+		{
+			source : availableCitys,
+			
+			select : function(event, ui)
+			{
+				event.preventDefault();
+				$("#autoComplete").val(ui.item.label);
+				findCity(ui.item.value);
+			},
+		});
+		
+		$("#autoComplete").on("keydown", function search(e)
+		{
+			if (e.keyCode == 13)
+				findCityID($(this).val());
+		});
+		
+		$("#searchCity>a").on("click", function()
+		{
+			findCityID($("#autoComplete").val());
+		});
+		
+		$( "#dialog" ).dialog({
+			title: "City not Found",
+			  dialogClass: "no-close",
+			  autoOpen: false,
+			  buttons: [
+			    {
+			      text: "OK",
+			      click: function() {
+			        $( this ).dialog( "close" );
+			      }
+			    }
+			  ]
+			});
+		
 	});
+});
 
+function findCity(cityID)
+{
+	$("#autoComplete").val("");
 	
-    var availableCitys = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    
-    $("#autoComplete").autocomplete({
-      source: availableCitys
-    });
-    */
-  });
+	var tempUnits
+	
+	if($("#temp1").is(".temp_active"))
+		tempUnits='';
+	else if($("#temp2").is(".temp_active"))
+		tempUnits='&units=metric';
+	else
+		tempUnits='&units=imperial';
+	
+	var url="http://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
+	
+	var urlForecast="http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
+	
+	getData(url, true);
+	getData(urlForecast, false);
+}
 
-
-
-
-
+function findCityID(city)
+{
+	for ( var k in availableCitys)
+	{
+		if (typeof availableCitys[k] !== 'function')
+		{
+			
+			if (availableCitys[k].label === city)
+			{
+				findCity(availableCitys[k].value)
+				return false;
+			}
+		}
+	}
+	
+	var text;
+	
+	if (city === "")
+		text = "Please put a city in the Textfield"
+	else
+		text = "The city " + city + " does not exist in " + "our Database, please insert another city.";
+	
+	$("#dialog p").text(text);
+	$( "#autoComplete" ).val("");
+	$( "#dialog" ).dialog( "open" );
+}

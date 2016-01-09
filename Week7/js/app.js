@@ -101,40 +101,39 @@ $(function()
 		getData(urlForcast, false);
 	});
 	
-	function getData(link, flag)
-	{
-		$.ajax(
-		{
-			type : 'GET',
-			url : link,
-			timeout : 2000,
-			data: '',
-			dataType: 'json',
-			
-			beforeSend : function(weatherData)
-			{
-				$("#msg").html('<div id="load">Loading Weather information</div>');
-			},
-			complete : function()
-			{
-				$('#load').remove();
-			},
-			success : function(weatherData)
-			{
-				if(flag)
-					processCurData(weatherData);
-				else
-				{
-					processForData(weatherData);
-					curFlag=true;
-				}
-			},
-			error : function(weatherData)
-			{
-				$("#msg").html('<div id="error">Loading Weather information for ' + weatherData.name + ' failed,' + ' please try again later.</div>')
-			}
-		});
-	}
-	
-	
 });
+
+function getData(link, flag)
+{
+	$.ajax(
+	{
+		type : 'GET',
+		url : link,
+		timeout : 2000,
+		data: '',
+		dataType: 'json',
+		
+		beforeSend : function(weatherData)
+		{
+			$("#msg").html('<div id="load">Loading Weather information</div>');
+		},
+		complete : function()
+		{
+			$('#load').remove();
+		},
+		success : function(weatherData)
+		{
+			if(flag)
+				processCurData(weatherData);
+			else
+			{
+				processForData(weatherData);
+				flag=true;
+			}
+		},
+		error : function(weatherData)
+		{
+			$("#msg").html('<div id="error">Loading Weather information for ' + weatherData.name + ' failed,' + ' please try again later.</div>')
+		}
+	});
+}

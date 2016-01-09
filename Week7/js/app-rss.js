@@ -14,7 +14,9 @@ function initialize()
 	"http://rss.theweathernetwork.com/weather/thxx0002",// Bangkok
 	"http://rss.theweathernetwork.com/weather/frq0001",// Rouen
 	"http://rss.theweathernetwork.com/weather/bexx0005",// Brussels
-	"http://rss.theweathernetwork.com/weather/frxx0002" ];// Montpellier
+	"http://rss.theweathernetwork.com/weather/frxx0002",// Montpellier
+	"http://rss.theweathernetwork.com/weather/snxx0006",//Singapore
+	"http://rss.theweathernetwork.com/weather/noxx0029"];//Oslo
 	
 	for (var i = 0; i < arrayRssSites.length; i++)
 	{
