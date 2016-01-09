@@ -9,6 +9,7 @@ $(function()
 	var http,httpForcast,city,key,units,url,urlForcast,lastTempClass;
 
 	init();
+	//loadRSS();
 	
 	function init()
 	{
