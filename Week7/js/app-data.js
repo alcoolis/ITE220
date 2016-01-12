@@ -2,18 +2,36 @@
  * 
  */
 
-var availableCitys=[];
+var availableCitys = [];
 
 $(function()
 {
+	$("#dialog").dialog(
+	{
+		title : "City not Found",
+		dialogClass : "no-close",
+		autoOpen : false,
+		buttons : [
+		{
+			text : "OK",
+			click : function()
+			{
+				$(this).dialog("close");
+			}
+		} ]
+	});
 	
 	$.get("data/cityList.txt", function(data)
 	{
 		var available = data.split(",");
 		
-		for(var i=0; i<available.length;i+=2)
+		for (var i = 0; i < available.length; i += 2)
 		{
-			availableCitys.push({label : available[i+1],value : available[i]});
+			availableCitys.push(
+			{
+				label : available[i + 1],
+				value : available[i]
+			});
 		}
 		
 		// alert(availableCitys.length);
@@ -38,27 +56,17 @@ $(function()
 		$("#autoComplete").on("keydown", function search(e)
 		{
 			if (e.keyCode == 13)
+			{
+				e.preventDefault()
 				findCityID($(this).val());
+			}
+			
 		});
 		
 		$("#searchCity>a").on("click", function()
 		{
 			findCityID($("#autoComplete").val());
 		});
-		
-		$( "#dialog" ).dialog({
-			title: "City not Found",
-			  dialogClass: "no-close",
-			  autoOpen: false,
-			  buttons: [
-			    {
-			      text: "OK",
-			      click: function() {
-			        $( this ).dialog( "close" );
-			      }
-			    }
-			  ]
-			});
 		
 	});
 });
@@ -68,17 +76,17 @@ function findCity(cityID)
 	$("#autoComplete").val("");
 	
 	var tempUnits
-	
-	if($("#temp1").is(".temp_active"))
-		tempUnits='';
-	else if($("#temp2").is(".temp_active"))
-		tempUnits='&units=metric';
+
+	if ($("#temp1").is(".temp_active"))
+		tempUnits = '';
+	else if ($("#temp2").is(".temp_active"))
+		tempUnits = '&units=metric';
 	else
-		tempUnits='&units=imperial';
+		tempUnits = '&units=imperial';
 	
-	var url="http://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
+	var url = "http://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
 	
-	var urlForecast="http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
+	var urlForecast = "http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
 	
 	getData(url, true);
 	getData(urlForecast, false);
@@ -106,7 +114,14 @@ function findCityID(city)
 	else
 		text = "The city " + city + " does not exist in " + "our Database, please insert another city.";
 	
+	console.log(text);
+
+	$("#autoComplete").val("");
+	sweetAlert("Something went wrong!", text, "error");
+	
+	/*
 	$("#dialog p").text(text);
-	$( "#autoComplete" ).val("");
-	$( "#dialog" ).dialog( "open" );
+	$("#dialog").dialog("open");
+	*/
+	
 }
