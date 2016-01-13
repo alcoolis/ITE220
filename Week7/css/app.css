@@ -1,6 +1,12 @@
 @CHARSET "ISO-8859-1";
 
 * {
+	/*
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-family: 'Orbitron', sans-serif;
+	font-family: 'Audiowide', cursive;
+	*/
+	
 	margin: 0px;
 	padding: 0px;
 	
@@ -57,13 +63,14 @@ nav div:FIRST-CHILD{
 
 #menu a {
 	text-decoration: none;
-	font-size: 1vw;
+	font-size: 0.9vw;
 	color: white;
 	display: block;
 	padding:1.3vh;
 	border:solid black 1px;
 	/*box-shadow: 5px 5px 5px gray;*/
 	background-color: #9EA3E5;
+	font-family: 'Playfair Display', serif;
 }
 
 #menu a:hover {
@@ -113,6 +120,8 @@ nav div:FIRST-CHILD{
 	padding: 2vh;
     border-radius: 2vw;
     border: outset 2px;
+    
+    font-family: 'Gentium Book Basic', serif;
 }
 #searchCity a:HOVER{
 	background-color: #2131FF;
@@ -130,17 +139,19 @@ nav div:FIRST-CHILD{
 #rssDiv{
 	position: absolute;
 	overflow: hidden;
-	left:1.2vw;
+	left:1.4vw;
     width: 32%;
     height: 55vh;
 	margin-top: 30vh;
+	
 }
 
 #rssScroll{
 	top:-15vh;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 .rssCity{
-	font-size: 1vw;
+	font-size: 1.2vw;
 	background-color: rgba(0, 0, 255, 0.2);
 	border-radius: 2vw;
 	padding: 0.1vw 0.5vw 0.1vw 0.5vw;
@@ -148,12 +159,13 @@ nav div:FIRST-CHILD{
 	margin-top: 0.5vw;
 }
 .rssDate{
-	font-size: 1vw;
+	font-size: 1.2vw;
 	text-decoration: underline;
 }
 .rssDescription{
 	color:white;
-	font-size: 0.8vw;
+	font-size: 1vw;
+	font-weight: bold;
 }
 #context{
 	position: absolute;
@@ -190,11 +202,14 @@ nav div:FIRST-CHILD{
 
 #menuTemp a {
 	text-decoration: none;
-	font-size: 1vw;
+	font-size: 0.8vw;
 	display: block;
 	padding:0.3vh;
 	border-radius: 30px;
 	/*box-shadow: 5px 5px 5px gray;*/
+	
+	
+	font-family: 'Orbitron', sans-serif;
 }
 
 #menuTemp a:hover {
@@ -235,8 +250,10 @@ nav div:FIRST-CHILD{
 	border-radius: 2vw;
 }
 #container h1{
-	margin-top: 2.5%;
+	margin-top: 1%;
 	font-size: 2vw;
+	
+	font-family: 'Gentium Book Basic', serif;
 }
 
 #townInfo{
@@ -253,14 +270,17 @@ nav div:FIRST-CHILD{
     
     margin-top:4%;
 	text-align: left;
+	
+	font-family: 'Marcellus', serif;
 }
 #weatherText p{
 	font-size: 1.4vw;
 	color:black;
 }
 #weatherText span{
-	font-size: 1.2vw;
-	color:white;
+	font-size: 1vw;
+	color:  white;
+	font-weight: bold;
 }
 
 #weatherImage{
@@ -307,6 +327,7 @@ nav div:FIRST-CHILD{
 	
 	font-size: 1.2vw;
 	text-align: center;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
 #cont3{
 	margin-right: 0;
