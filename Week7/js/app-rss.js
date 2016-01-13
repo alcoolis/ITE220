@@ -39,7 +39,7 @@ function initialize()
 	
 	$('#rssScroll').on('vticker.beforeTick', function()
 			{
-			
+
 				var ul = jQuery('#rssScroll ul');
 				
 				ul.children('li:nth-child(2)').animate(
@@ -60,6 +60,7 @@ function displayRSS(container, feed)
 {
 	feed.load(function(result)
 	{
+		$('#rssScroll ul').fadeIn(500);
 		if (!result.error)
 		{
 			container.append("<span class='rssCity'>" +result.feed.title+"</span><br/>");
@@ -70,6 +71,7 @@ function displayRSS(container, feed)
 				container.append("<span class='rssDate'>" +entry.title + "</span><br/>" + 
 						"<span class='rssDescription'>" + entry.content + "</span><br/>");
 			}
+			
 		}
 		else
 		{

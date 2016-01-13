@@ -15,26 +15,24 @@ function processForData(ajaxResultFor)
 		$("#cont"+(i+1)+" :nth-child(1)").text(europeanDate(date[i]));
 		$("#cont"+(i+1)+" span:nth-child(1)").text("Temp.:"+temp[i]);
 
-		$("#cont"+(i+1)+"Image").attr("src", "http://openweathermap.org/img/w/" + (ajaxResultFor.list[index].weather[0].icon).substring(0,2)+"d" + ".png");
+		$("#cont"+(i+1)+"Image").attr("src", "http://openweathermap.org/img/w/" +
+				(ajaxResultFor.list[index].weather[0].icon).substring(0,2)+"d" + ".png").hide();
 		
 		index+=8;
 	}
-}
-
-function europeanDate(date)
-{
-	var year=date.substring(0,4);
-	var month=date.substring(5,7);
-	date=date.substring(8,10);
 	
-	return date + "/" + month + "/" + year;
+	for (var i = 0; i < 4; i++)
+	{
+		$('#cont' + i + ' *').fadeIn(500);
+		$("#cont"+(i+1)+"Image").fadeIn(500);
+	}
 }
 
 function processCurData(ajaxResultCur)
 {
-	$("#weatherImage").attr("src", "http://openweathermap.org/img/w/" + ajaxResultCur.weather[0].icon + ".png");
+	$("#weatherImage").attr("src", "http://openweathermap.org/img/w/" + ajaxResultCur.weather[0].icon + ".png").hide();;
 	
-	$("#container h1").text("Weather Conditions for " + ajaxResultCur.name);
+	$("#container h1").text("Weather Conditions for " + ajaxResultCur.name).hide().fadeIn(500);
 	
 	$("#weatherText p:nth-child(1)>span").text(ajaxResultCur.weather[0].description);
 	$("#weatherText p:nth-child(2) span:nth-child(1)").text(ajaxResultCur.main.temp);
@@ -47,6 +45,9 @@ function processCurData(ajaxResultCur)
 	$("#weatherText p:nth-child(8)>span").text(ajaxResultCur.clouds.all + " %");
 	$("#weatherText p:nth-child(9) span:nth-child(1)").text(formatDate(ajaxResultCur.sys.sunrise, ajaxResultCur.name));
 	$("#weatherText p:nth-child(9) span:nth-child(2)").text(formatDate(ajaxResultCur.sys.sunset, ajaxResultCur.name));
+	
+	$('#weatherText').fadeIn(500);
+	$('#weatherImage').fadeIn(500);
 	
 	animateWeather();
 	
@@ -68,6 +69,15 @@ function animateWeather()
 	{
 		animateWeather();
 	});
+}
+
+function europeanDate(date)
+{
+	var year=date.substring(0,4);
+	var month=date.substring(5,7);
+	date=date.substring(8,10);
+	
+	return date + "/" + month + "/" + year;
 }
 
 function formatDate(epochTime, cityName)
