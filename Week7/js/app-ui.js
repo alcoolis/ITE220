@@ -30,26 +30,7 @@ function processForData(ajaxResultFor)
 
 function processCurData(ajaxResultCur)
 {
-	$("#weatherImage").attr("src", "http://openweathermap.org/img/w/" + ajaxResultCur.weather[0].icon + ".png").hide().fadeIn(500, function()
-	{
-		function animateWeather()
-		{
-			$('#weatherImage').animate(
-			{
-				right : '+=0.5%',
-				top : '+=0.5%',
-			}, 1000, 'swing', false);
-			
-			$('#weatherImage').animate(
-			{
-				right : '-=0.5%',
-				top : '-=0.5%',
-			}, 1000, 'swing', function()
-			{
-				animateWeather();
-			});
-		}
-	});
+	$("#weatherImage").attr("src", "http://openweathermap.org/img/w/" + ajaxResultCur.weather[0].icon + ".png");
 	
 	$("#container h1").text("Weather Conditions for " + ajaxResultCur.name).hide().fadeIn(500);
 	
@@ -67,8 +48,26 @@ function processCurData(ajaxResultCur)
 
 	$('#weatherText').fadeIn(500);
 	
+	animateWeather();
 	
+}
+
+function animateWeather()
+{
+	$('#weatherImage').animate(
+	{
+		right : '+=0.5%',
+		top : '+=0.5%',
+	}, 1000, 'swing', false);
 	
+	$('#weatherImage').animate(
+	{
+		right : '-=0.5%',
+		top : '-=0.5%',
+	}, 1000, 'swing', function()
+	{
+		animateWeather();
+	});
 }
 
 function europeanDate(date)
