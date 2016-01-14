@@ -21,7 +21,7 @@ function processForData(ajaxResultFor)
 		index+=8;
 	}
 	
-	for (var i = 0; i < 4; i++)
+	for (var i = 1; i < 4; i++)
 	{
 		$('#cont' + i + ' *').fadeIn(500);
 		$("#cont"+(i+1)+"Image").fadeIn(500);
@@ -30,7 +30,7 @@ function processForData(ajaxResultFor)
 
 function processCurData(ajaxResultCur)
 {
-	$("#weatherImage").attr("src", "http://openweathermap.org/img/w/" + ajaxResultCur.weather[0].icon + ".png").hide();;
+	$("#weatherImage").attr("src", "http://openweathermap.org/img/w/" + ajaxResultCur.weather[0].icon + ".png").hide().fadeIn(500);
 	
 	$("#container h1").text("Weather Conditions for " + ajaxResultCur.name).hide().fadeIn(500);
 	
@@ -45,9 +45,8 @@ function processCurData(ajaxResultCur)
 	$("#weatherText p:nth-child(8)>span").text(ajaxResultCur.clouds.all + " %");
 	$("#weatherText p:nth-child(9) span:nth-child(1)").text(formatDate(ajaxResultCur.sys.sunrise, ajaxResultCur.name));
 	$("#weatherText p:nth-child(9) span:nth-child(2)").text(formatDate(ajaxResultCur.sys.sunset, ajaxResultCur.name));
-	
+
 	$('#weatherText').fadeIn(500);
-	$('#weatherImage').fadeIn(500);
 	
 	animateWeather();
 	
