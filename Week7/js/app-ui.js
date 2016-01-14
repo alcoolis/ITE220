@@ -3,28 +3,27 @@
  */
 function processForData(ajaxResultFor)
 {
-	var index=findTheCorrectDate(ajaxResultFor.list);
+	var index = findTheCorrectDate(ajaxResultFor.list);
 	
-	var date=[ajaxResultFor.list[index].dt_txt, ajaxResultFor.list[index+8].dt_txt, ajaxResultFor.list[index+16].dt_txt];
-	var temp=[ajaxResultFor.list[index].main.temp_min, ajaxResultFor.list[index+8].main.temp_min, ajaxResultFor.list[index+16].main.temp_min];
+	var date = [ ajaxResultFor.list[index].dt_txt, ajaxResultFor.list[index + 8].dt_txt, ajaxResultFor.list[index + 16].dt_txt ];
+	var temp = [ ajaxResultFor.list[index].main.temp_min, ajaxResultFor.list[index + 8].main.temp_min, ajaxResultFor.list[index + 16].main.temp_min ];
 	
-	for(var i=0; i<date.length; i++)
+	for (var i = 0; i < date.length; i++)
 	{
-		date[i]=date[i].substring(0, date[i].indexOf("12:00:00"));
+		date[i] = date[i].substring(0, date[i].indexOf("12:00:00"));
 		
-		$("#cont"+(i+1)+" :nth-child(1)").text(europeanDate(date[i]));
-		$("#cont"+(i+1)+" span:nth-child(1)").text("Temp.:"+temp[i]);
-
-		$("#cont"+(i+1)+"Image").attr("src", "http://openweathermap.org/img/w/" +
-				(ajaxResultFor.list[index].weather[0].icon).substring(0,2)+"d" + ".png").hide();
+		$("#cont" + (i + 1) + " :nth-child(1)").text(europeanDate(date[i]));
+		$("#cont" + (i + 1) + " span:nth-child(1)").text("Temp.:" + temp[i]);
 		
-		index+=8;
+		$("#cont" + (i + 1) + "Image").attr("src", "http://openweathermap.org/img/w/" + (ajaxResultFor.list[index].weather[0].icon).substring(0, 2) + "d" + ".png").hide();
+		
+		index += 8;
 	}
 	
 	for (var i = 1; i < 4; i++)
 	{
 		$('#cont' + i + ' *').fadeIn(500);
-		$("#cont"+(i+1)+"Image").fadeIn(500);
+		$("#cont" + i + "Image").fadeIn(500);
 	}
 }
 
@@ -45,7 +44,7 @@ function processCurData(ajaxResultCur)
 	$("#weatherText p:nth-child(8)>span").text(ajaxResultCur.clouds.all + " %");
 	$("#weatherText p:nth-child(9) span:nth-child(1)").text(formatDate(ajaxResultCur.sys.sunrise, ajaxResultCur.name));
 	$("#weatherText p:nth-child(9) span:nth-child(2)").text(formatDate(ajaxResultCur.sys.sunset, ajaxResultCur.name));
-
+	
 	$('#weatherText').fadeIn(500);
 	
 	animateWeather();
@@ -72,9 +71,9 @@ function animateWeather()
 
 function europeanDate(date)
 {
-	var year=date.substring(0,4);
-	var month=date.substring(5,7);
-	date=date.substring(8,10);
+	var year = date.substring(0, 4);
+	var month = date.substring(5, 7);
+	date = date.substring(8, 10);
 	
 	return date + "/" + month + "/" + year;
 }
@@ -115,19 +114,19 @@ function findTheCorrectDate(ajaxResultList)
 {
 	for (var i = 0; i < ajaxResultList.length; i++)
 	{
-		var string=ajaxResultList[i].dt_txt;
+		var string = ajaxResultList[i].dt_txt;
 		
 		var index = string.indexOf("00:00:00");
 		
-		if(index>0)
+		if (index > 0)
 		{
 			for (var j = i; j < ajaxResultList.length; j++)
 			{
-				var string=ajaxResultList[j].dt_txt;
+				var string = ajaxResultList[j].dt_txt;
 				
 				index = string.indexOf("12:00:00");
 				
-				if(index>0)
+				if (index > 0)
 				{
 					return j;
 				}
