@@ -61,6 +61,7 @@ function displayRSS(container, feed)
 	feed.load(function(result)
 	{
 		$('#rssScroll ul').fadeIn(500);
+		$('#rssScroll').attr('title', 'Stop Scrolling');
 		if (!result.error)
 		{
 			container.append("<span class='rssCity'>" +result.feed.title+"</span><br/>");
