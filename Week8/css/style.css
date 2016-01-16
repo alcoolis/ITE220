@@ -1,0 +1,244 @@
+@CHARSET "ISO-8859-1";
+
+* {
+	/*border: 1px red solid;*/
+	margin: 0;
+	padding: 0;
+	
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	position: relative;
+}
+
+body:after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../img/back.png);
+	background-repeat: no-repeat; 
+	background-size : 100% 100%;
+	width: 100%;
+	height: 100%;
+	opacity: 0.1;
+	z-index: -1;
+	background-size: 100% 100%;
+}
+
+#content {
+	position: absolute;
+	width: 70%;
+	min-width: 500px;
+	min-height: 300px;
+	height: 100%;
+	left: 15%;
+	overflow: hidden;
+}
+
+#panel{
+	position: absolute;
+	left: 0%;
+	width:30%;
+	height:87%;
+	min-height: 400px;
+	min-width: 200px;
+	margin:0 5% 5% 5%;
+	
+	background-color: rgba(255,0,0,0.5);
+	
+	
+	border-right: solid black 2px;
+	border-bottom: solid black 5px;
+	border-left: solid black 2px;
+	border-radius:  0 0 1vw 1vw;
+}
+
+#panel h1{
+    font-family: 'Chewy', cursive;
+    text-align:center;
+    font-size: 2em;
+    color: rgba(0,0,255, 0.5);
+}
+
+.paragraph{
+	width: 80%;
+	margin-left:10%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+    text-align:center;
+    font-family: 'Architects Daughter', cursive;
+    font-size: 1em;
+}
+
+#prices{
+	width: 80%;
+	margin-left:10%;
+	margin-bottom: 15%;
+	
+	border-radius: 1vw;
+	background-color: rgba(255,255,255, 0.5);
+}
+
+#prices ul {
+    list-style: none;
+    padding:5%;
+    margin:0;
+}
+
+#prices li { 
+    padding-left: 1.2em; 
+    text-indent: -.7em;
+    color:#315a05;
+    font-family: 'Chewy', cursive;
+    font-size: 1.4em;
+}
+
+#prices li:nth-child(2) {
+    color:#055e66;
+}
+#prices li:nth-child(3) {
+	color: #923931;
+}
+
+#prices li:before {
+    content: "\26AB ";
+}
+
+#button {
+	-moz-box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	-webkit-box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dbe6c4), color-stop(1, #9ba892));
+	background:-moz-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:-webkit-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:-o-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:-ms-linear-gradient(top, #dbe6c4 5%, #9ba892 100%);
+	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbe6c4', endColorstr='#9ba892',GradientType=0);
+	background-color:#dbe6c4;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #b2b8ad;
+	display:inline-block;
+	cursor:pointer;
+	color:#757d6f;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 56px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ced9bf;
+	margin-left:15%;
+}
+#button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9ba892), color-stop(1, #dbe6c4));
+	background:-moz-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:-webkit-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:-o-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:-ms-linear-gradient(top, #9ba892 5%, #dbe6c4 100%);
+	background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9ba892', endColorstr='#dbe6c4',GradientType=0);
+	background-color:#9ba892;
+}
+#button:active {
+	position:relative;
+	top:1px;
+}
+
+
+#stage {
+	position: absolute;
+	left: 50%;
+	width: 50%;
+	height: 20%;
+	min-height: 100px;
+	min-width: 240px;
+	margin: 0 auto;
+	background-color: rgba(0,0,255, 0.5);
+	border-right: solid black 5px;
+	border-bottom: solid black 2px;
+	border-left: solid black 5px;
+	border-radius:  0 0 2vw 2vw ;
+	
+	z-index: 90;
+}
+
+#screen{
+	position: absolute;
+	left: 10%;
+	top:10%;
+	width: 80%;
+	height: 80%;
+	min-height: 60px;
+	min-width: 200px;
+	background-color: rgba(0,0,0, 1);
+	border: ridge 5px;
+	border-radius: 1vw ;
+	
+	
+    font-family: 'Architects Daughter', cursive;
+	color:yellow;
+	z-index: 100;
+}
+#screen h1:nth-child(1){
+	float: left;
+	width: auto;
+	text-align: left;
+	padding-left: 3%;
+	font-size: 1.7em;
+	
+}
+#screen h1:nth-child(2){
+	width: auto;
+	text-align:right;
+	padding-right:3%;
+	font-size: 1.7em;
+	
+}
+#screen h1:nth-child(3){
+	color:red;
+	text-align: center;
+	font-size: 1.2em;
+	padding-top:0%;
+	
+}
+
+#seats {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	width: 50%;
+}
+
+#seats img {
+	width: 17%;
+	height: auto;
+	margin: 1.5%;
+}
+
+#seats a:nth-child(1), #seats a:nth-child(2), #seats a:nth-child(3),
+	#seats a:nth-child(4), #seats a:nth-child(5) {
+	-webkit-filter: hue-rotate(90deg);
+	filter: hue-rotate(90deg);
+}
+
+#seats a:nth-child(7), #seats a:nth-child(8), #seats a:nth-child(9),
+	#seats a:nth-child(10), #seats a:nth-child(11) {
+	-webkit-filter: hue-rotate(180deg);
+	filter: hue-rotate(180deg);
+}
+
+.classSelected{
+	-webkit-filter: opacity(50%);
+	filter: opacity(50%);
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
