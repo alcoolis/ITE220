@@ -12,8 +12,6 @@
 
 
 <script src="js/jquery.js"></script>
-
-
 <script src="js/app.js"></script>
 
 </head>
@@ -23,35 +21,37 @@
 
 		<div id="panel">
 		
-		
-		<?php
-		
-		echo "<h1>GIRLS' GENERATION 4TH TOUR - PHANTASIA</h1>";
+    	   <h1>GIRLS' GENERATION</br>4<sup>th</sup></br>TOUR-PHANTASIA</h1>
+        
+                <div class='paragraph'>It is a private concert, therefore there are only 15
+                    seats which are divided into rows
+                    <span>A</span>, 
+                    <span>B</span>, and 
+                    <span>C</span>.
+                </div>
+                <div id='prices'> 
+                    <ul>
+                        <li> Cost 3,000THB</li>
+                        <li> Cost 2,000THB</li>
+                        <li> Cost 1,000THB</li>
+                    </ul>
+                </div><!-- END of prices -->
     
-echo "<div class='paragraph'>It is a private concert, therefore there are only 15
-seats which are divided into rows; <span style='color:#315a05;font-weight: bold;'>A</span>, 
-    <span style='color:#055e66;font-weight: bold;'>B</span>, and 
-    <span style='color:#923931;font-weight: bold;'>C</span>.</div>";
-
-echo "<div id='prices'> <ul><li> Cost 3,000THB</li><li> Cost 2,000THB</li>
-    <li> Cost 1,000THB</li></ul></div>";
-
-echo "<div class='paragraph'> Our Site has a lucky draw promotion campaign. Find the lucky place and win 
-    a 50% discount for this seat!!!</div>";
-
-echo "<a id='button' href='result.php'>Buy Now!</a>";
+                <div class='paragraph'> Our Site has a lucky draw promotion campaign. Find the 
+                    lucky place and win a 50% discount for this seat!!!
+                </div>
+    
+                <a id='button' href='result.php'>Buy Now!</a>
                 
-		  
-
-		?>
-		</div>
-		<!-- END of panel -->
+		</div><!-- END of panel -->
 		
 		<div id="stage">
 		
 			<div id="screen">
 			
-           		<h1>Price: </h1><h1></h1><h1>Please choose at least 1 ticket!</h1>
+           		<h1>Price: </h1><h1></h1>
+           		<h1>Please choose at least 1 ticket!</h1>
+           		
 			</div><!-- END of screen -->
 			
 		</div><!-- END of stage -->
@@ -60,21 +60,21 @@ echo "<a id='button' href='result.php'>Buy Now!</a>";
 		
             <?php
             $seats = array(
-                'A-1' => "<a class='A' href='#'><img src='img/A1.png'/></a>",
-                'A-2' => "<a class='A' href='#'><img src='img/A1.png'/></a>",
-                'A-3' => "<a class='A' href='#'><img src='img/A1.png'/></a>",
-                'A-4' => "<a class='A' href='#'><img src='img/A1.png'/></a>",
-                'A-5' => "<a class='A' href='#'><img src='img/A1.png'/></a>",
-                'B-1' => "<a class='B' href='#'><img src='img/A1.png'/></a>",
-                'B-2' => "<a class='B' href='#'><img src='img/A1.png'/></a>",
-                'B-3' => "<a class='B' href='#'><img src='img/A1.png'/></a>",
-                'B-4' => "<a class='B' href='#'><img src='img/A1.png'/></a>",
-                'B-5' => "<a class='B' href='#'><img src='img/A1.png'/></a>",
-                'C-1' => "<a class='C' href='#'><img src='img/A1.png'/></a>",
-                'C-2' => "<a class='C' href='#'><img src='img/A1.png'/></a>",
-                'C-3' => "<a class='C' href='#'><img src='img/A1.png'/></a>",
-                'C-4' => "<a class='C' href='#'><img src='img/A1.png'/></a>",
-                'C-5' => "<a class='C' href='#'><img src='img/A1.png'/></a>"
+                'A-1' => "<a id='A-1' class='A' href='#'><img src='img/A1.png'/></a>",
+                'A-2' => "<a id='A-2' class='A' href='#'><img src='img/A1.png'/></a>",
+                'A-3' => "<a id='A-3' class='A' href='#'><img src='img/A1.png'/></a>",
+                'A-4' => "<a id='A-4' class='A' href='#'><img src='img/A1.png'/></a>",
+                'A-5' => "<a id='A-5' class='A' href='#'><img src='img/A1.png'/></a>",
+                'B-1' => "<a id='B-1' class='B' href='#'><img src='img/A1.png'/></a>",
+                'B-2' => "<a id='B-2' class='B' href='#'><img src='img/A1.png'/></a>",
+                'B-3' => "<a id='B-3' class='B' href='#'><img src='img/A1.png'/></a>",
+                'B-4' => "<a id='B-4' class='B' href='#'><img src='img/A1.png'/></a>",
+                'B-5' => "<a id='B-5' class='B' href='#'><img src='img/A1.png'/></a>",
+                'C-1' => "<a id='C-1' class='C' href='#'><img src='img/A1.png'/></a>",
+                'C-2' => "<a id='C-2' class='C' href='#'><img src='img/A1.png'/></a>",
+                'C-3' => "<a id='C-3' class='C' href='#'><img src='img/A1.png'/></a>",
+                'C-4' => "<a id='C-4' class='C' href='#'><img src='img/A1.png'/></a>",
+                'C-5' => "<a id='C-5' class='C' href='#'><img src='img/A1.png'/></a>"
             );
             $counter = 0;
             
