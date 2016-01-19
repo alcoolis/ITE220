@@ -1,0 +1,4 @@
+XMLHttpRequest cannot load http://api.openweathermap.org/data/2.5/weather?q=Thessaloniki&appid=2de143494c0b295cca9337e1e96b00e0&units=metric. The 'Access-Control-Allow-Origin' header contains multiple values '*,*', but only one is allowed. Origin 'http://altintzis.github.io' is therefore not allowed access.
+
+XMLHttpRequest cannot load
+http://api.openweathermap.org/data/2.5/forecast?q=Thessaloniki&appid=2de143494c0b295cca9337e1e96b00e0&units=metric. The 'Access-Control-Allow-Origin' header contains multiple values '*,*', but only one is allowed. Origin 'http://altintzis.github.io' is therefore not allowed access.
