@@ -24,7 +24,7 @@
 	<div id=stagePage2>
 		<div id="screen">
 <?php
-$selectedSeats = $_GET["seats"];
+$selectedSeats = $_POST["seats"];
 sort($selectedSeats);
 $totalPrice = 0;
 $luckyTicket = luckyTicket();

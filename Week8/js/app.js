@@ -5,11 +5,14 @@
 $(function()
 {
 	$('#button').hide();
+	$('#hiddenDiv').hide();
 	
 	var counter = 0;
 	var price = 0;
-	var link = [];
-	link["page"] = "result.php?";
+
+	//prevent the bug of adding more places in the case of broswer back button
+	$(".checkBoxes:checked").prop("checked", false);
+
 	
 	$('#screen h1:nth-child(2)').html(price + " &#3647");
 	
@@ -25,7 +28,7 @@ $(function()
 			}
 			
 			$('img', this).removeClass('classSelected');
-			delete link[this.id];
+			$('#c'+this.id).prop('checked', false);
 			
 			if ($(this).hasClass('A'))
 				price -= 3000;
@@ -53,7 +56,7 @@ $(function()
 			}
 			
 			$('img', this).addClass('classSelected');
-			link[this.id] = this.id;
+			$('#c'+this.id).prop('checked', true);
 			
 			if ($(this).hasClass('A'))
 				price += 3000;
@@ -74,27 +77,6 @@ $(function()
 		}
 		$('#screen h1:nth-child(2)').html(price + " &#3647");
 	})
-	
-
-
-
-	$("#button").click(function()
-	{
-		var hrefForButton = link["page"];
-		
-		for ( var k in link)
-		{
-			if (link.hasOwnProperty(k))
-			{
-				if (k !== "page")
-				{
-					hrefForButton += "seats%5B%5D=" + link[k] + "&";
-				}
-			}
-		}
-		hrefForButton = hrefForButton.substring(0, hrefForButton.length - 1);
-		$('#button').attr("href", hrefForButton);
-	});
 
 });
 

@@ -40,8 +40,27 @@
                 <div class='paragraph'> Our Site has a lucky draw promotion campaign. Find the 
                     lucky place and win a 50% discount for this seat!!!
                 </div>
-    
-                <a id='button' href='result.php'>Buy Now!</a>
+    			
+    			<form action="result.php" method="post">
+        			<div id="hiddenDiv">
+            			<input class="checkBoxes" type="checkbox" id="cA-1" name="seats[]" value="A-1">
+            			<input class="checkBoxes" type="checkbox" id="cA-2" name="seats[]" value="A-2">
+            			<input class="checkBoxes" type="checkbox" id="cA-3" name="seats[]" value="A-3">
+            			<input class="checkBoxes" type="checkbox" id="cA-4" name="seats[]" value="A-4">
+            			<input class="checkBoxes" type="checkbox" id="cA-5" name="seats[]" value="A-5">
+            			<input class="checkBoxes" type="checkbox" id="cB-1" name="seats[]" value="B-1">
+            			<input class="checkBoxes" type="checkbox" id="cB-2" name="seats[]" value="B-2">
+            			<input class="checkBoxes" type="checkbox" id="cB-3" name="seats[]" value="B-3">
+            			<input class="checkBoxes" type="checkbox" id="cB-4" name="seats[]" value="B-4">
+            			<input class="checkBoxes" type="checkbox" id="cB-5" name="seats[]" value="B-5">
+            			<input class="checkBoxes" type="checkbox" id="cC-1" name="seats[]" value="C-1">
+            			<input class="checkBoxes" type="checkbox" id="cC-2" name="seats[]" value="C-2">
+            			<input class="checkBoxes" type="checkbox" id="cC-3" name="seats[]" value="C-3">
+            			<input class="checkBoxes" type="checkbox" id="cC-4" name="seats[]" value="C-4">
+            			<input class="checkBoxes" type="checkbox" id="cC-5" name="seats[]" value="C-5">
+        			</div>
+                	<input id="button" type="submit" name="formSubmit" value="Buy Now!" />
+                </form>
                 
 		</div><!-- END of panel -->
 		
