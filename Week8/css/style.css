@@ -34,7 +34,7 @@ body:after {
 	position: absolute;
 	width: 70%;
 	min-width: 500px;
-	min-height: 300px;
+	min-height: 600px;
 	height: 100%;
 	left: 15%;
 	overflow: hidden;
@@ -55,7 +55,12 @@ body:after {
 	border-right: solid black 2px;
 	border-bottom: solid black 5px;
 	border-left: solid black 2px;
-	border-radius:  0 0 1vw 1vw;
+	
+	-webkit-border-radius: 0 0 1em 1em;
+	-webkit-border-radius: 0 0 1vw 1vw;
+    -moz-border-radius: 0 0 1vw 1vw;
+    border-radius: 0 0 1vw 1vw;
+    -khtml-border-radius: 0 0 1vw 1vw;
 }
 
 #panel h1{
@@ -89,7 +94,12 @@ body:after {
 	margin-left:10%;
 	margin-bottom: 10%;
 	
-	border-radius: 1vw;
+	
+	-webkit-border-radius: 1em;
+	-webkit-border-radius: 1vw;
+    -moz-border-radius: 1vw;
+    border-radius: 1vw;
+    -khtml-border-radius: 1vw;
 	background-color: rgba(255,255,255, 0.5);
 }
 
@@ -130,9 +140,14 @@ body:after {
 	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dbe6c4', endColorstr='#9ba892',GradientType=0);
 	background-color:#dbe6c4;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
+	
+	
+	-webkit-border-radius: 0.5em;
+	-webkit-border-radius: 0.5vw;
+    -moz-border-radius: 0.5vw;
+    border-radius: 0.5vw;
+    -khtml-border-radius: 0.5vw;
+	
 	border:1px solid #b2b8ad;
 	display:inline-block;
 	cursor:pointer;
@@ -173,7 +188,14 @@ body:after {
 	border-right: solid black 5px;
 	border-bottom: solid black 2px;
 	border-left: solid black 5px;
-	border-radius:  0 0 2vw 2vw ;
+	
+	
+	-webkit-border-radius: 0 0 2em 2em;
+	-webkit-border-radius: 0 0 2vw 2vw ;
+    -moz-border-radius: 0 0 2vw 2vw ;
+    border-radius: 0 0 2vw 2vw ;
+    -khtml-border-radius: 0 0 2vw 2vw ;
+	
 	
 	z-index: 90;
 }
@@ -188,8 +210,13 @@ body:after {
 	min-width: 200px;
 	background-color: rgba(0,0,0, 1);
 	border: ridge 5px;
-	border-radius: 1vw ;
 	
+	
+	-webkit-border-radius: 1em;
+	-webkit-border-radius: 1vw ;
+    -moz-border-radius: 1vw ;
+    border-radius: 1vw ;
+    -khtml-border-radius: 1vw ;
 	
     font-family: 'Architects Daughter', cursive;
 	color:yellow;
@@ -267,7 +294,12 @@ body:after {
 	border-bottom: solid black 2px;
 	border-top: solid black 2px;
 	border-left: solid black 5px;
-	border-radius: 2vw 2vw 2vw 2vw ;
+	
+	-webkit-border-radius: 2em 2em 2em 2em;
+	-webkit-border-radius: 2vw 2vw 2vw 2vw ;
+    -moz-border-radius: 2vw 2vw 2vw 2vw ;
+    border-radius: 2vw 2vw 2vw 2vw ;
+    -khtml-border-radius: 2vw 2vw 2vw 2vw ;
 	
 	z-index: 90;
 }
