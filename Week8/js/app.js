@@ -20,7 +20,7 @@ $(function()
 	{
 		if ($('img', this).hasClass('classSelected'))
 		{
-			if (counter <= 5)
+			if (counter <= 5)//if 5 places are selected before click then with this click the counter drop to 4 (line 41) which is a "correct" value.
 			{
 				$('#screen h1:nth-child(3)').html("");
 				$('#screen h1:nth-child(3)').removeClass("blink_me");
@@ -28,6 +28,7 @@ $(function()
 			}
 			
 			$('img', this).removeClass('classSelected');
+			//V.2 update - uncheck hidden checkboxes for sending the data via post php method
 			$('#c'+this.id).prop('checked', false);
 			
 			if ($(this).hasClass('A'))
@@ -48,7 +49,7 @@ $(function()
 		else
 		{
 			if (counter > 4)
-				return false;
+				return false; //prevent the rest of the code to run in case of more than 4 places are selected...
 			else if (counter == 0)
 			{
 				$('#screen h1:nth-child(3)').html("");
@@ -56,6 +57,7 @@ $(function()
 			}
 			
 			$('img', this).addClass('classSelected');
+			//V.2 update - check hidden checkboxes for sending the data via post php method
 			$('#c'+this.id).prop('checked', true);
 			
 			if ($(this).hasClass('A'))
