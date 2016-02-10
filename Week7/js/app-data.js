@@ -84,9 +84,9 @@ function findCity(cityID)
 	else
 		tempUnits = '&units=imperial';
 	
-	var url = "http://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
+	var url = "http://api.openweathermap.org/data/2.5/weather?id=" + cityID + "&appid=19b99775f39c053c524ab12e79679f4e" + tempUnits;
 	
-	var urlForecast = "http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=2de143494c0b295cca9337e1e96b00e0" + tempUnits;
+	var urlForecast = "http://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=19b99775f39c053c524ab12e79679f4e" + tempUnits;
 	
 	getData(url, true);
 	getData(urlForecast, false);
