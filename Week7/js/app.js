@@ -27,7 +27,7 @@ $(function()
 		http = "http://api.openweathermap.org/data/2.5/weather?q=";
 		httpForcast = "http://api.openweathermap.org/data/2.5/forecast?q="
 		city = "Thessaloniki";
-		key = "&appid=2de143494c0b295cca9337e1e96b00e0";
+		key = "&appid=19b99775f39c053c524ab12e79679f4e";
 		units = "&units=metric";
 		url = http + city + key + units;
 		urlForcast = httpForcast + city + key + units;
